@@ -5,18 +5,20 @@ import org.bukkit.Material;
 
 public class OverhauledFish {
 
-    private Material fishMaterial;
-    private String displayname;
-    private String lore;
-    private double rarity;
-    private double minoz;
-    private double maxoz;
+    private final Material fishMaterial;
+    private final int custommodeldata;
+    private final String displayname;
+    private final String lore;
+    private final double rarity;
+    private final double minoz;
+    private final double maxoz;
 
-    private double minozAverage;
-    private double minozExceptional;
+    private final double minozAverage;
+    private final double minozExceptional;
 
-    public OverhauledFish(Material material, String displayname, String lore, double rarity, double minoz, double maxoz){
+    public OverhauledFish(Material material, int custommodeldata, String displayname, String lore, double rarity, double minoz, double maxoz){
         this.fishMaterial = material;
+        this.custommodeldata = custommodeldata;
         this.displayname =  ChatColor.translateAlternateColorCodes('&',displayname);
         this.lore= ChatColor.translateAlternateColorCodes('&',lore);
         this.rarity = rarity;
@@ -31,40 +33,48 @@ public class OverhauledFish {
     }
 
     /**
-     * Gets the min ounces for average quality
-     * @returns min ounces for average quality
+     * Returns the custom model data id
+     * @return the custom model data id
      */
-    public double getMinozAverage() {
+    public int getCustomModelData() {
+        return custommodeldata;
+    }
+
+    /**
+     * Gets the min ounces for average quality
+     * @return min ounces for average quality
+     */
+    public double getMinOZAverage() {
         return minozAverage;
     }
 
     /**
      * Returns the min ounces for exceptional quality
-     * @returns the min ounces for exceptional quality
+     * @return the min ounces for exceptional quality
      */
-    public double getMinozExceptional() {
+    public double getMinOZExceptional() {
         return minozExceptional;
     }
 
     /**
      * Returns the max ounces for the fish.
-     * @returns the max ounces
+     * @return the max ounces
      */
-    public double getMaxoz() {
+    public double getMaxOZ() {
         return maxoz;
     }
 
     /**
      * Returns the min ounces for the fish
-     * @returns the min ounces
+     * @return the min ounces
      */
-    public double getMinoz() {
+    public double getMinOZ() {
         return minoz;
     }
 
     /**
      * Returns the rarity of the fish as a double
-     * @returns the rarity
+     * @return the rarity
      */
     public double getRarity() {
         return rarity;
@@ -72,7 +82,7 @@ public class OverhauledFish {
 
     /**
      * Returns the lore string to be added to the item
-     * @returns the lore
+     * @return the lore
      */
     public String getLoreString() {
         return lore;
@@ -80,7 +90,7 @@ public class OverhauledFish {
 
     /**
      * Returns the material of the fish item
-     * @returns the fish material
+     * @return the fish material
      */
     public Material getFishMaterial() {
         return fishMaterial;
@@ -88,7 +98,7 @@ public class OverhauledFish {
 
     /**
      * Returns the display name of the fish item
-     * @returns the display name
+     * @return the display name
      */
     public String getDisplayName() {
         return displayname;

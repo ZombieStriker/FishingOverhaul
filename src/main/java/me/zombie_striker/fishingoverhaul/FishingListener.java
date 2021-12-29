@@ -21,6 +21,7 @@ public class FishingListener implements Listener {
         if(event.getState() == PlayerFishEvent.State.CAUGHT_FISH){
             OverhauledFish fish = main.getFishingmanager().getRandomOverhauledFish();
             ItemStack item = main.getFish(fish);
+            if(event.getCaught()!=null)
             if(event.getCaught().getType()== EntityType.DROPPED_ITEM){
                 ((Item)event.getCaught()).setItemStack(item);
             }
